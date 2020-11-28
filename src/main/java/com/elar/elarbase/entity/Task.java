@@ -21,7 +21,7 @@ public class Task  extends SessionUtil{
         device.setNameDevice(deviceName);
 
         ProjectService projectService = new ProjectService();
-        ArrayList<Project> projectList = new ArrayList<>();
+        ArrayList<Project> projectList = new ArrayList<Project>();
 
         for (int i = fromId; i < beforeId; i++) {
             projectList.add(projectService.getById(i));

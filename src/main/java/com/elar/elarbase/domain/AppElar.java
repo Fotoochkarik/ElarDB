@@ -4,18 +4,15 @@ package com.elar.elarbase.domain;
 import com.elar.elarbase.bl.HibernateUtil;
 import com.elar.elarbase.entity.Device;
 import com.elar.elarbase.entity.Project;
-import com.elar.elarbase.entity.SummaryDevices;
-
-import org.hibernate.Session;
 import com.elar.elarbase.service.DeviceService;
 import com.elar.elarbase.service.ProjectService;
 import com.elar.elarbase.service.TaskService;
+import org.hibernate.Session;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class AppElar {
@@ -30,8 +27,8 @@ public class AppElar {
         ProjectService projectService = new ProjectService();
         TaskService taskService = new TaskService();
 
-        SummaryDevices summaryDevices = new SummaryDevices();
-        List <Project> projectList =new ArrayList<>();
+
+//        List <Project> projectList =new ArrayList<>();
 
 //
 //        projectList.add(new Project("Операция 1"));
