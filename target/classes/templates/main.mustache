@@ -1,0 +1,28 @@
+<html>
+<body>
+
+    <div>
+
+        <form method="post">
+            <input type="text" name="nameDevice" placeholder="Ввведите название партии: ">
+            <button type="submit">Добавить</button>
+        </form>
+
+    </div>
+
+<div> Список партий </div>
+
+    <form method="post" action="filter">
+        <input type="text" name="filter">
+        <button type="submit">Найти</button>
+    </form>
+
+{{#device}}
+    <div>
+        <b>{{id}}</b>
+        <span>{{nameDevice}}</span>
+
+    </div>
+{{/device}}
+</body>
+</html>

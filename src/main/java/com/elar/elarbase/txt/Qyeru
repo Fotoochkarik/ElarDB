@@ -1,0 +1,23 @@
+create table device (
+	id serial primary key,
+    name_device varchar  not null unique
+);
+select * from project p  where p.project_id = 3 ;
+
+select * from  device d, project p  where d.name_device = 'Партия 2' ;
+
+select * from  device d, project p  where p.project_id = 2;
+
+
+
+SELECT p.id, p.name `Имя сотрудника`, ps.id `pos.id`, ps.name `Должность`
+FROM `persons` p
+INNER JOIN `positions` ps ON ps.id = p.post_id
+1
+2
+3
+SELECT d2.id , d2.name_device ,p2.title, p2.status ,p2.project_id
+FROM device d2
+INNER JOIN project p2  ON d2.id = p2.project_id
+where d2.name_device = 'Партия 2'
+; 
