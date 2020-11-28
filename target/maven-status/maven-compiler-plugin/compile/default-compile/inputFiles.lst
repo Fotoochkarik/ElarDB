@@ -3,11 +3,14 @@ C:\Users\user\IdeaProjects\ElarDB\src\main\java\com\elar\elarbase\service\Projec
 C:\Users\user\IdeaProjects\ElarDB\src\main\java\com\elar\elarbase\service\TaskService.java
 C:\Users\user\IdeaProjects\ElarDB\src\main\java\com\elar\elarbase\Application.java
 C:\Users\user\IdeaProjects\ElarDB\src\main\java\com\elar\elarbase\service\DeviceService.java
+C:\Users\user\IdeaProjects\ElarDB\src\main\java\com\elar\elarbase\repos\DeviceRepo.java
 C:\Users\user\IdeaProjects\ElarDB\src\main\java\com\elar\elarbase\dao\DeviceDAO.java
 C:\Users\user\IdeaProjects\ElarDB\src\main\java\com\elar\elarbase\entity\Task.java
 C:\Users\user\IdeaProjects\ElarDB\src\main\java\com\elar\elarbase\bl\SessionUtil.java
 C:\Users\user\IdeaProjects\ElarDB\src\main\java\com\elar\elarbase\entity\Project.java
 C:\Users\user\IdeaProjects\ElarDB\src\main\java\com\elar\elarbase\GreetingController.java
+C:\Users\user\IdeaProjects\ElarDB\src\main\java\com\elar\elarbase\entity\Device1.java
+C:\Users\user\IdeaProjects\ElarDB\src\main\java\com\elar\elarbase\config\MvcConfig.java
 C:\Users\user\IdeaProjects\ElarDB\src\main\java\com\elar\elarbase\entity\SummaryDevices.java
 C:\Users\user\IdeaProjects\ElarDB\src\main\java\com\elar\elarbase\dao\ProjectDao.java
 C:\Users\user\IdeaProjects\ElarDB\src\main\java\com\elar\elarbase\entity\Device.java
