@@ -3,7 +3,7 @@ package com.elar.elarbase.service;
 
 import com.elar.elarbase.bl.SessionUtil;
 import com.elar.elarbase.dao.DeviceDAO;
-import com.elar.elarbase.entity.Device;
+import com.elar.elarbase.domain.Device;
 
 import org.hibernate.Session;
 import org.hibernate.query.Query;

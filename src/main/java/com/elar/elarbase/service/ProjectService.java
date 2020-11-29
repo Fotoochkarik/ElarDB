@@ -2,7 +2,7 @@ package com.elar.elarbase.service;
 
 import com.elar.elarbase.bl.SessionUtil;
 import com.elar.elarbase.dao.ProjectDao;
-import com.elar.elarbase.entity.Project;
+import com.elar.elarbase.domain.Project;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 

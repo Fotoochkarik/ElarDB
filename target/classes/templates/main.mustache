@@ -27,6 +27,15 @@
     <div>
         <b>{{id}}</b>
         <span>{{nameDevice}}</span>
+        <strong>{{nameAuthor}}</strong>
+        <ul>
+            {{#projects}}
+            <li>{{title}}
+                {{status}}
+            </li>
+            {{/projects}}
+        </ul>
+<!--        <datalist>{{projects}}</datalist>-->
     </div>
 {{/device}}
 </body>

@@ -1,6 +1,6 @@
 package com.elar.elarbase.repos;
 
-import com.elar.elarbase.entity.Device;
+import com.elar.elarbase.domain.Device;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;

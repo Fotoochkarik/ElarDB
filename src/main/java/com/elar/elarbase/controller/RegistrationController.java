@@ -1,6 +1,6 @@
 package com.elar.elarbase.controller;
 
-import com.elar.elarbase.entity.Role;
+import com.elar.elarbase.domain.Role;
 import com.elar.elarbase.entity.User;
 import com.elar.elarbase.repos.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;

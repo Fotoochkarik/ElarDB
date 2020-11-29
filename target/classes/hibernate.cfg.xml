@@ -18,8 +18,8 @@
         <property name="hibernate.format_sql">true</property>
 
 
-        <mapping class="com.elar.elarbase.entity.Device"></mapping>
-        <mapping class="com.elar.elarbase.entity.Project"></mapping>
+        <mapping class="com.elar.elarbase.domain.Device"></mapping>
+        <mapping class="com.elar.elarbase.domain.Project"></mapping>
         <mapping class="com.elar.elarbase.entity.SummaryDevices"></mapping>
         <mapping class="com.elar.elarbase.entity.Task"></mapping>
 

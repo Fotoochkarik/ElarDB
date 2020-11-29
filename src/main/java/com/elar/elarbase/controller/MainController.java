@@ -1,8 +1,10 @@
 package com.elar.elarbase.controller;
 
-import com.elar.elarbase.entity.Device;
+import com.elar.elarbase.domain.Device;
+import com.elar.elarbase.entity.User;
 import com.elar.elarbase.repos.DeviceRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -29,8 +31,11 @@ public class MainController {
         return "main";
     }
     @PostMapping("/main")
-    public String add (@RequestParam String nameDevice, Map<String, Object> model){
-        Device device = new Device(nameDevice);
+
+    public String add (
+            @AuthenticationPrincipal User author,
+            @RequestParam String nameDevice, Map<String, Object> model){
+        Device device = new Device(nameDevice, author);
         deviceRepo.save(device);
 
         Iterable<Device> devices =  deviceRepo.findAll();

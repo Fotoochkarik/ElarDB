@@ -1,8 +1,8 @@
 package com.elar.elarbase.service;
 
 import com.elar.elarbase.bl.SessionUtil;
-import com.elar.elarbase.entity.Device;
-import com.elar.elarbase.entity.Project;
+import com.elar.elarbase.domain.Device;
+import com.elar.elarbase.domain.Project;
 import com.elar.elarbase.entity.Task;
 import org.hibernate.Session;
 import org.hibernate.query.Query;

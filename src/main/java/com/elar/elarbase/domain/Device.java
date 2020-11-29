@@ -1,7 +1,8 @@
-package com.elar.elarbase.entity;
+package com.elar.elarbase.domain;
 
 
 
+import com.elar.elarbase.entity.User;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -18,14 +19,22 @@ public class Device {
     private int id;
 
     @Column (name = "name_device")
-      private String nameDevice;
+    private String nameDevice;
 
+    private User author;
+
+    public String getNameAuthor(){
+        return author != null ? author.getUsername() : "<none>";
+    }
     public Device() {
     }
 
-    public Device(String nameDevice) {
+    public Device(String nameDevice, User user) {
         this.nameDevice = nameDevice;
+        this.author = user;
     }
+
+
     //    @OneToOne (cascade = CascadeType.ALL)
 //    @JoinColumn(name = "device_id")
 //    private SummaryDevices summary;
@@ -41,7 +50,7 @@ public class Device {
         return "Device{" +
                 "id=" + id +
                 ", nameDevice='" + nameDevice + '\'' +
-                ", projects=" +
+                ", author=" + author +
                 '}';
     }
 

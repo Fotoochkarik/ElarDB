@@ -1,6 +1,6 @@
 package com.elar.elarbase.dao;
 
-import com.elar.elarbase.entity.Device;
+import com.elar.elarbase.domain.Device;
 
 import java.sql.SQLException;
 import java.util.List;

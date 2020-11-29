@@ -1,4 +1,4 @@
-package com.elar.elarbase.entity;
+package com.elar.elarbase.domain;
 
 import lombok.Data;
 
@@ -18,12 +18,18 @@ public class Project {
     @Column (name = "status")
     private boolean status;
 
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = ("device_id"))
+    private Device device;
+
     public Project(String title) {
         this.title = title;
         this.status = false;
     }
 
-//    @ManyToMany(mappedBy = "projects")
+    public Project() {
+    }
+    //    @ManyToMany(mappedBy = "projects")
 //    private Set<Employee> employees;
 
     //OneToMany Example
