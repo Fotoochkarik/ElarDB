@@ -17,9 +17,8 @@
     </div>
 
 <div> Список партий </div>
-    <form method="post" action="filter">
-        <input type="text" name="filter">
-        <input type="hidden" name="_csrf" value="{{_csrf.token}}">
+    <form method="get" action="/main">
+        <input type="text" name="filter" placeholder="Введите партию для поиска" >
         <button type="submit">Найти</button>
     </form>
 
