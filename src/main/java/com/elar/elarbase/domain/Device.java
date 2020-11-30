@@ -10,8 +10,7 @@ import java.util.List;
 
 @Entity
 @Data
-@Table(name = "device")
-
+@Table(name = "devices")
 public class Device {
 
     @Id
