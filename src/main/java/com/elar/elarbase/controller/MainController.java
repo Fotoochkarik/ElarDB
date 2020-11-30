@@ -38,7 +38,6 @@ public class MainController {
         return "main";
     }
     @PostMapping("/main")
-
     public String add (
             @AuthenticationPrincipal User author,
             @RequestParam String nameDevice, Map<String, Object> model){

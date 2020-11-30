@@ -1,10 +1,1 @@
-com\elar\elarbase\config\WebSecurityConfig.class
-com\elar\elarbase\domain\Role.class
-com\elar\elarbase\controller\MainController.class
-com\elar\elarbase\domain\Project.class
-com\elar\elarbase\service\UserService.class
-com\elar\elarbase\controller\IndexController.class
-com\elar\elarbase\domain\Device.class
-com\elar\elarbase\entity\User.class
-com\elar\elarbase\controller\RegistrationController.class
-com\elar\elarbase\repos\UserRepo.class
+com/elar/elarbase/controller/IndexController.class

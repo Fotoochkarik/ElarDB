@@ -21,20 +21,7 @@
     <button type="submit">Найти</button>
 </form>
 
-{#list device as device}
-<div>
-    <b>${device.id}</b>
-    <span>${device.nameDevice}</span>
-    <strong>${device.nameAuthor}</strong>
-    <ul>
-        {#list projects as project}
-        <li>${project.title}
-            ${project.status}
-        </li>
-        {/#list}
-    </ul>
-</div>
-<#else>
-No Device
-{/#list>
+<#list device as nameDevice, author>
+<p>${nameDevice}: ${author}
+</#list>
 </@c.page>

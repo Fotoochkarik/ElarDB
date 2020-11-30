@@ -32,11 +32,10 @@ public class RegistrationController {
             model.put("message", "User exist!" );
             return "registration";
         }
-
         user.setActive(true);
         user.setRoles(Collections.singleton(Role.USER));
         userRepo.save(user);
-        return "redirect:/login";
+        return "login";
     }
 
 }
