@@ -1,6 +1,7 @@
 package com.elar.elarbase.controller;
 
 import com.elar.elarbase.domain.Device;
+import com.elar.elarbase.domain.Project;
 import com.elar.elarbase.entity.User;
 import com.elar.elarbase.repos.DeviceRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -40,8 +43,18 @@ public class MainController {
     @PostMapping("/main")
     public String add (
             @AuthenticationPrincipal User author,
-            @RequestParam String nameDevice, Map<String, Object> model){
-        Device device = new Device(nameDevice, author);
+            @RequestParam String nameDevice,
+            @RequestParam String  titleProject1,
+            @RequestParam String  titleProject2,
+            @RequestParam String  titleProject3,
+                    Map<String, Object> model){
+
+        List<Project> projects = new ArrayList<>();
+        projects.add(new Project(titleProject1));
+        projects.add(new Project(titleProject2));
+        projects.add(new Project(titleProject3));
+        Device device = new Device(nameDevice, author, projects);
+
         deviceRepo.save(device);
 
         Iterable<Device> devices =  deviceRepo.findAll();

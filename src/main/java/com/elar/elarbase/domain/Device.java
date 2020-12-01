@@ -28,6 +28,12 @@ public class Device {
     public Device() {
     }
 
+    public Device(String nameDevice, User author, List<Project> projects) {
+        this.nameDevice = nameDevice;
+        this.author = author;
+        this.projects = projects;
+    }
+
     public Device(String nameDevice, User user) {
         this.nameDevice = nameDevice;
         this.author = user;
