@@ -1,17 +1,11 @@
 /home/uliana/IdeaProjects/ElarDB/src/main/java/com/elar/elarbase/config/WebSecurityConfig.java
 /home/uliana/IdeaProjects/ElarDB/src/main/java/com/elar/elarbase/config/MvcConfig.java
-/home/uliana/IdeaProjects/ElarDB/src/main/java/com/elar/elarbase/bl/SessionUtil.java
 /home/uliana/IdeaProjects/ElarDB/src/main/java/com/elar/elarbase/Application.java
-/home/uliana/IdeaProjects/ElarDB/src/main/java/com/elar/elarbase/service/DeviceService.java
 /home/uliana/IdeaProjects/ElarDB/src/main/java/com/elar/elarbase/service/UserService.java
 /home/uliana/IdeaProjects/ElarDB/src/main/java/com/elar/elarbase/domain/Project.java
 /home/uliana/IdeaProjects/ElarDB/src/main/java/com/elar/elarbase/controller/MainController.java
-/home/uliana/IdeaProjects/ElarDB/src/main/java/com/elar/elarbase/service/TaskService.java
-/home/uliana/IdeaProjects/ElarDB/src/main/java/com/elar/elarbase/entity/Task.java
-/home/uliana/IdeaProjects/ElarDB/src/main/java/com/elar/elarbase/bl/HibernateUtil.java
 /home/uliana/IdeaProjects/ElarDB/src/main/java/com/elar/elarbase/dao/DeviceDAO.java
 /home/uliana/IdeaProjects/ElarDB/src/main/java/com/elar/elarbase/domain/Device.java
-/home/uliana/IdeaProjects/ElarDB/src/main/java/com/elar/elarbase/service/ProjectService.java
 /home/uliana/IdeaProjects/ElarDB/src/main/java/com/elar/elarbase/domain/Role.java
 /home/uliana/IdeaProjects/ElarDB/src/main/java/com/elar/elarbase/entity/User.java
 /home/uliana/IdeaProjects/ElarDB/src/main/java/com/elar/elarbase/controller/IndexController.java

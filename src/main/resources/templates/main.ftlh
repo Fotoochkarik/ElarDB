@@ -22,4 +22,22 @@
 </form>
 
 
+    <ul>
+
+        <#list device as dev>
+        <li>
+            <b>${dev.id}</b>
+            <span>${dev.nameDevice}</span>
+            <strong>${dev.nameAuthor}</strong>
+
+
+
+
+        </li>
+    </#list>
+
+</ul>
+
+
+
 </@c.page>
