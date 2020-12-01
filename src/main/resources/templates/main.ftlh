@@ -21,7 +21,5 @@
     <button type="submit">Найти</button>
 </form>
 
-<#list device as nameDevice, author>
-<p>${nameDevice}: ${author}
-</#list>
+
 </@c.page>
