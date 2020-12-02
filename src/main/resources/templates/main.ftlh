@@ -36,6 +36,7 @@
             <b>${dev.id}</b>
             <span>${dev.nameDevice}</span>
             <strong>${dev.nameAuthor}</strong>
+            <td><#list dev.projects as project>${project.title}<#sep>, </#list></td>
         </li>
     </#list>
 
