@@ -1,7 +1,6 @@
 package com.elar.elarbase.entity;
 
 import com.elar.elarbase.domain.Role;
-import com.elar.elarbase.service.UserService;
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -27,23 +26,36 @@ public class User implements UserDetails {
     @Enumerated (EnumType.STRING)
     private Set <Role> roles;
 
+    public boolean isAdmin(){
+        return roles.contains(Role.ADMIN);
+    }
+
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return getRoles();
     }
 
-
-
-
     @Override
     public boolean isAccountNonExpired() {
         return true;
     }
 
+    public boolean isActive() {
+        return active;
+    }
+
     @Override
     public boolean isAccountNonLocked() {
         return true;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getPassword() {
+        return password;
     }
 
     @Override
@@ -54,5 +66,13 @@ public class User implements UserDetails {
     @Override
     public boolean isEnabled() {
         return isActive();
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public Set<Role> getRoles() {
+        return roles;
     }
 }
