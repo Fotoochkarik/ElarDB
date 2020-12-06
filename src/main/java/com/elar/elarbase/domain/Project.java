@@ -29,7 +29,13 @@ public class Project {
 
     public Project() {
     }
-    //    @ManyToMany(mappedBy = "projects")
+
+    public boolean isDone(){
+        return this.status = true;
+    }
+
+
+//    @ManyToMany(mappedBy = "projects")
 //    private Set<Employee> employees;
 
     //OneToMany Example

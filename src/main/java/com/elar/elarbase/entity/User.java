@@ -26,9 +26,6 @@ public class User implements UserDetails {
     @Enumerated (EnumType.STRING)
     private Set <Role> roles;
 
-
-
-
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return getRoles();
@@ -39,21 +36,9 @@ public class User implements UserDetails {
         return true;
     }
 
-    public boolean isActive() {
-        return active;
-    }
-
     @Override
     public boolean isAccountNonLocked() {
         return true;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public String getPassword() {
-        return password;
     }
 
     @Override
@@ -66,11 +51,5 @@ public class User implements UserDetails {
         return isActive();
     }
 
-    public String getUsername() {
-        return username;
-    }
 
-    public Set<Role> getRoles() {
-        return roles;
-    }
 }
