@@ -55,6 +55,7 @@ public class MainController {
         projects.add(new Project(titleProject3));
         Device device = new Device(nameDevice, author, projects);
 
+
         deviceRepo.save(device);
 
         Iterable<Device> devices =  deviceRepo.findAll();

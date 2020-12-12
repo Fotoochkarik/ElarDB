@@ -42,6 +42,7 @@
 
                     <div class="card-header">
                         <span>${dev.nameDevice}  ${dev.nameAuthor}</span>
+                        <a href="/device/${dev.id}">edit</a>
                     </div>
                             <ul class="list-group list-group-flush">
                                 <#list dev.projects as project>

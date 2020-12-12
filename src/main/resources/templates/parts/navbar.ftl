@@ -13,7 +13,7 @@
                 <a class="nav-link" href="/">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/main">Devise</a>
+                <a class="nav-link" href="/main">Device</a>
             </li>
 
             <#if isAdmin>

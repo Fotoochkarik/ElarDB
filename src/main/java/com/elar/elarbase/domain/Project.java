@@ -18,9 +18,12 @@ public class Project {
     @Column (name = "status")
     private boolean status;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = ("device_id"))
-    private Device device;
+//    @ManyToOne(fetch = FetchType.EAGER)
+//    @JoinColumn(name = ("device_id"))
+//    private Device device;
+
+    @Column(name = "comments")
+    private String comments;
 
     public Project(String title) {
         this.title = title;

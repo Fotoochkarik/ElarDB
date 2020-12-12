@@ -1,7 +1,5 @@
 package com.elar.elarbase.domain;
 
-
-
 import com.elar.elarbase.entity.User;
 import lombok.Data;
 
@@ -21,6 +19,10 @@ public class Device {
     private String nameDevice;
 
     private User author;
+
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "project_id" )
+    private List<Project> projects;
 
     public String getNameAuthor(){
         return author != null ? author.getUsername() : "<none>";
@@ -46,9 +48,7 @@ public class Device {
 
     //OneToMany Example
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "project_id" )
-    private List<Project> projects;
+
 
     @Override
     public String toString() {
