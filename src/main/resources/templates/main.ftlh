@@ -45,8 +45,8 @@
                         <a href="/device/${dev.id}">edit</a>
                     </div>
                             <ul class="list-group list-group-flush">
-                                <#list dev.projects as project>
-                                <li class="list-group-item" >${project.title}
+                                <#list dev.projects as projects_key, project>
+                                <li class="list-group-item" >${projects_key}: ${project.title}
                                     <input class="form-check-input ml-2" type="checkbox" value="isDone" id="defaultCheck1">
                                     <label class="form-check-label ml-4" for="defaultCheck1">Выполнено</label>
                                 </li>

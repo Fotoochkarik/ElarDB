@@ -5,6 +5,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Map;
 
 @Entity
 @Data
@@ -13,7 +14,7 @@ public class Device {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     @Column (name = "name_device")
     private String nameDevice;
@@ -22,7 +23,7 @@ public class Device {
 
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "project_id" )
-    private List<Project> projects;
+    private Map<Long, Project> projects;
 
     public String getNameAuthor(){
         return author != null ? author.getUsername() : "<none>";
@@ -30,16 +31,12 @@ public class Device {
     public Device() {
     }
 
-    public Device(String nameDevice, User author, List<Project> projects) {
+    public Device(String nameDevice, User author, Map<Long, Project> projects) {
         this.nameDevice = nameDevice;
         this.author = author;
         this.projects = projects;
     }
 
-    public Device(String nameDevice, User user) {
-        this.nameDevice = nameDevice;
-        this.author = user;
-    }
 
 
     //    @OneToOne (cascade = CascadeType.ALL)

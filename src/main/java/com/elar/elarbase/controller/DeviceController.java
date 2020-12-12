@@ -49,7 +49,9 @@ public class DeviceController {
             @RequestParam("deviceId") Device device
     ){
 
-        List<Project> projects = device.getProjects();
+        Map<Long, Project> projects = device.getProjects();
+
+
 
 //        projects.get(0).setComments(comments0);
 //        projects.get(1).setComments(comments1);
@@ -75,20 +77,20 @@ public class DeviceController {
 //        }
 
 
-            if (comments0 != null && !comments0.isEmpty()) {
-                projects.get(0).setComments(comments0);
-                //            projects.get(0).isDone();
-            }
+        if (comments0 != null && !comments0.isEmpty()) {
+            projects.get(1L).setComments(comments0);
+            projects.get(1L).isDone();
+        }
 
-            if (comments1 != null && !comments1.isEmpty()) {
-                projects.get(1).setComments(comments1);
-//            projects.get(1).isDone();
-            }
+        if (comments1 != null && !comments1.isEmpty()) {
+            projects.get(2L).setComments(comments1);
+            projects.get(2L).isDone();
+        }
 
-            if (comments2 != null && !comments2.isEmpty()) {
-                projects.get(2).setComments(comments2);
-//            projects.get(2).isDone();
-            }
+        if (comments2 != null && !comments2.isEmpty()) {
+            projects.get(3L).setComments(comments2);
+            projects.get(3L).isDone();
+        }
 
 
 //        for (Project project : projects) {

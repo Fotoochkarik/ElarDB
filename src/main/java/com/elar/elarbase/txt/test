@@ -25,3 +25,7 @@
     <input type="hidden" value="${device.id}" name="deviceId">
     <input type="hidden" value="${_csrf.token}" name="_csrf">
     <button type="submit">Save</button>
+
+
+
+    validate

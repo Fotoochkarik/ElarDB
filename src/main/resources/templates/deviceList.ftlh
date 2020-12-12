@@ -1,22 +1,44 @@
 <#import "parts/common.ftl" as c>
 
 <@c.page>
-List of Devices
+<div class="container mt-2">
+    <h5>List of Devices</h5>
+</div>
 
-<table>
-    <thead>
+<table class="table">
+    <thead class="thead-light">
     <tr>
-        <th>Name</th>
-        <th>Project</th>
-        <th></th>
+        <th scope="col">Device</th>
+        <th scope="col">Project</th>
+
     </tr>
     </thead>
     <tbody>
-    <#list device as device>
+    <#list device as  device>
     <tr>
-        <td>${device.nameDevice}</td>
-        <td><#list device.projects as project>${project.title}<#sep>, </#list></td>
-        <td><a href="/device/${device.id}">edit</a></td>
+            <td>${device.nameDevice}  <a href="/device/${device.id}">edit</a></td>
+
+                    <td>
+                        <table class="table">
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Title</th>
+                                    <th>Comments</th>
+                                </tr>
+                                </thead>
+                            <tbody>
+                                <#list device.projects as projects_key, project>
+                                    <tr>
+                                        <td>${projects_key}</td>
+                                        <td>${project.title} </td>
+                                        <td>${project.comments?ifExists}</td>
+                                    </tr>
+                               </#list>
+                            </tbody>
+                        </table>
+                    </td>
+
     </tr>
     </#list>
     </tbody>

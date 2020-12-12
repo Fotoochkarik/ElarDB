@@ -11,7 +11,7 @@ public class Project {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
     @Column(name = "title")
     private String title;
 
@@ -28,10 +28,12 @@ public class Project {
     public Project(String title) {
         this.title = title;
         this.status = false;
+
     }
 
     public Project() {
     }
+
 
     public boolean isDone(){
         return this.status = true;

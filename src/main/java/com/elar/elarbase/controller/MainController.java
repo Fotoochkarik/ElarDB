@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 
 @Controller
 
@@ -48,11 +49,13 @@ public class MainController {
             @RequestParam String  titleProject2,
             @RequestParam String  titleProject3,
                     Map<String, Object> model){
-
-        List<Project> projects = new ArrayList<>();
-        projects.add(new Project(titleProject1));
-        projects.add(new Project(titleProject2));
-        projects.add(new Project(titleProject3));
+        Project project1 = new Project(titleProject1);
+        Project project2 =new Project(titleProject2);
+        Project project3 =new Project(titleProject3);
+        Map<Long, Project> projects = new TreeMap<>();
+        projects.put(1L, project1);
+        projects.put(2L, project2);
+        projects.put(3L, project3);
         Device device = new Device(nameDevice, author, projects);
 
 
