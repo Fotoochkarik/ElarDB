@@ -5,15 +5,23 @@ Device editor
 
 <form action="/device" method="post">
 
-    <#list projects as project>
-    <div>
-        ${project.title}
-        <input type="text" name="comments" >
+    <input type="text" name="comments0" projects.get(0) placeholder="1" />
+    <input type="hidden" value="${device.id}" name="deviceId">
+    <input type="hidden" value="${_csrf.token}" name="_csrf">
+    <button type="submit">Save</button>
 
-    </div>
-</#list>
+    <input type="text" name="comments1" projects.get(1) placeholder="2"/>
+    <input type="hidden" value="${device.id}" name="deviceId">
+    <input type="hidden" value="${_csrf.token}" name="_csrf">
+    <button type="submit">Save</button>
+
+    <input type="text" name="comments2" projects.get(2) placeholder="3"/>
+
+
 <input type="hidden" value="${device.id}" name="deviceId">
 <input type="hidden" value="${_csrf.token}" name="_csrf">
 <button type="submit">Save</button>
+
+
 </form>
 </@c.page>

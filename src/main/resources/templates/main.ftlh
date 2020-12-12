@@ -46,7 +46,7 @@
                     </div>
                             <ul class="list-group list-group-flush">
                                 <#list dev.projects as project>
-                                <li class="list-group-item">${project.title}
+                                <li class="list-group-item" >${project.title}
                                     <input class="form-check-input ml-2" type="checkbox" value="isDone" id="defaultCheck1">
                                     <label class="form-check-label ml-4" for="defaultCheck1">Выполнено</label>
                                 </li>

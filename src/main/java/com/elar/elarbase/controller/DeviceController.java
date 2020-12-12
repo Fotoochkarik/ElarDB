@@ -42,25 +42,59 @@ public class DeviceController {
 
     @PostMapping
     public String deviceCommentsSave(
-            @RequestParam String comments,
+            @RequestParam String comments0,
+            @RequestParam String comments1,
+            @RequestParam String comments2,
+//            @RequestParam String comments,
             @RequestParam("deviceId") Device device
     ){
 
         List<Project> projects = device.getProjects();
 
+//        projects.get(0).setComments(comments0);
+//        projects.get(1).setComments(comments1);
+//        projects.get(2).setComments(comments2);
+//        projects.get(2).getTitle()
 
-        for (int i = 0; i <projects.size() ; i++) {
-           projects.get(i).setComments(comments);
 
-        }
-        device.setProjects(projects);
+
+
+//        String cm = "comments";
+//        for (int i = 0; i <projects.size() ; i++) {
+//            String st =  cm + i;
+//            projects.get(i).setComments(st);
+//
+//        }
+
+//        String cm = "comments";
+//        for (int i = 0; i <3; i++) {
+//            String st = cm + i;
+//
+//            System.out.println(st);
+//
+//        }
+
+
+            if (comments0 != null && !comments0.isEmpty()) {
+                projects.get(0).setComments(comments0);
+                //            projects.get(0).isDone();
+            }
+
+            if (comments1 != null && !comments1.isEmpty()) {
+                projects.get(1).setComments(comments1);
+//            projects.get(1).isDone();
+            }
+
+            if (comments2 != null && !comments2.isEmpty()) {
+                projects.get(2).setComments(comments2);
+//            projects.get(2).isDone();
+            }
 
 
 //        for (Project project : projects) {
-////            if(comments != null && comments.isEmpty())
-//
+//            if(comments != null && !comments.isEmpty())
 //            project.setComments(comments);
-//            project.isDone();
+////            project.isDone();
 //        }
 
 
