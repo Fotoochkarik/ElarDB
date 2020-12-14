@@ -20,17 +20,28 @@
 
 <div class="collapse  mt-3" id="collapseExample">
     <div class="form-group col-md-6">
-        <form method="post">
+        <form method="post" class="form-inline">
 
-            <input type="text" class="form-control mt-1" name="nameDevice" placeholder="Ввведите название партии: ">
-            <input type="text" class="form-control mt-1" name="titleProject1" placeholder="Ввведите операцию 1: ">
-            <input type="text" class="form-control mt-1" name="titleProject2" placeholder="Ввведите операцию 2: ">
-            <input type="text" class="form-control mt-1" name="titleProject3" placeholder="Ввведите операцию 3: ">
+                <input type="text" class="form-control mt-1" name="nameDevice" placeholder="Название партии: ">
+                <div class="mt-3">
+                <input type="text" class="form-control mt-1" name="titleProject1" placeholder="Наименование операции: ">
+                <input type="text" class="form-control mt-1" name="modeProject1" placeholder="Режим: ">
+                </div>
+                <div>
+                <input type="text" class="form-control mt-1" name="titleProject2" placeholder="Наименование операции: ">
+                <input type="text" class="form-control mt-1" name="modeProject2" placeholder="Режим: ">
+                </div>
+                <div>
+                <input type="text" class="form-control mt-1" name="titleProject3" placeholder="Наименование операции: ">
+                <input type="text" class="form-control mt-1" name="modeProject3" placeholder="Режим: ">
 
-            <input type="hidden" name="_csrf" value="${_csrf.token}" />
-            <button type="submit" class="btn btn-primary mt-2">Добавить</button>
+                    <input type="hidden" name="_csrf" value="${_csrf.token}" />
+                    <button type="submit" class="btn btn-primary mt-2">Добавить</button>
+                </div>
+
 
         </form>
+
     </div>
 </div>
 
@@ -46,9 +57,8 @@
                     </div>
                             <ul class="list-group list-group-flush">
                                 <#list dev.projects as projects_key, project>
-                                <li class="list-group-item" >${projects_key}: ${project.title}
-                                    <input class="form-check-input ml-2" type="checkbox" value="isDone" id="defaultCheck1">
-                                    <label class="form-check-label ml-4" for="defaultCheck1">Выполнено</label>
+                                <li class="list-group-item" >${projects_key}: ${project.title}: ${project.comments?ifExists}
+
                                 </li>
 
                                 </#list>

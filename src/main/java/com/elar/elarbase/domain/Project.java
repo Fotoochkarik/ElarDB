@@ -3,6 +3,7 @@ package com.elar.elarbase.domain;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Data
@@ -12,23 +13,26 @@ public class Project {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @Column(name = "title")
     private String title;
 
     @Column (name = "status")
     private boolean status;
 
-//    @ManyToOne(fetch = FetchType.EAGER)
-//    @JoinColumn(name = ("device_id"))
-//    private Device device;
+    private String mode;
 
     @Column(name = "comments")
     private String comments;
 
-    public Project(String title) {
+    private  Integer quantity;
+
+    private Date date;
+
+    public Project(String title, String mode) {
         this.title = title;
         this.status = false;
-
+        this.mode = mode;
     }
 
     public Project() {
@@ -36,6 +40,7 @@ public class Project {
 
 
     public boolean isDone(){
+        this.date = new Date();
         return this.status = true;
     }
 

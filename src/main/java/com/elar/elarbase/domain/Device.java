@@ -1,10 +1,8 @@
 package com.elar.elarbase.domain;
 
-import com.elar.elarbase.entity.User;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.util.List;
 import java.util.Map;
 
 @Entity

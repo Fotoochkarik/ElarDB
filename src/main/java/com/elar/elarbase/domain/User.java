@@ -1,4 +1,4 @@
-package com.elar.elarbase.entity;
+package com.elar.elarbase.domain;
 
 import com.elar.elarbase.domain.Role;
 import lombok.Data;
