@@ -3,6 +3,7 @@ package com.elar.elarbase.domain;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Map;
 
 @Entity
@@ -21,7 +22,8 @@ public class Device {
 
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "project_id" )
-    private Map<Long, Project> projects;
+//    private Map<Long, Project> projects;
+    private List< Project> projects;
 
     public String getNameAuthor(){
         return author != null ? author.getUsername() : "<none>";
@@ -29,7 +31,7 @@ public class Device {
     public Device() {
     }
 
-    public Device(String nameDevice, User author, Map<Long, Project> projects) {
+    public Device(String nameDevice, User author, List<Project> projects) {
         this.nameDevice = nameDevice;
         this.author = author;
         this.projects = projects;

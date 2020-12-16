@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.Map;
+import java.util.List;
 
 @Controller
 @RequestMapping("/device")
@@ -40,20 +40,31 @@ public class DeviceController {
 //            @RequestParam String comments1,
 //            @RequestParam String comments2,
             @RequestParam String comments,
+//            @RequestParam String comment,
             @RequestParam("deviceId") Device device
     ){
 
-        Map<Long, Project> projects = device.getProjects();
+//        Map<Long, Project> projects = device.getProjects();
 
+        List<Project> projectsList =device.getProjects();
 
-        for (Long i = 1L; i < projects.size()+1; i++) {
-            Project project = projects.get(i);
+        for (Project project : projectsList) {
             if(!project.isStatus()){
-                projects.get(i).setComments(comments);
-                projects.get(i).isDone();
+                project.setComments(comments);
+                project.isDone();
                 break;
             }
         }
+
+
+//        for (Long i = 1L; i < projects.size()+1; i++) {
+//            Project project = projects.get(i);
+//            if(!project.isStatus()){
+//                projects.get(i).setComments(comments);
+//                projects.get(i).isDone();
+//                break;
+//            }
+//        }
 
 
 //        projects.get(0).setComments(comments0);

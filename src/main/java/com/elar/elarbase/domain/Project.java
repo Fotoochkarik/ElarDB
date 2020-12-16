@@ -29,10 +29,13 @@ public class Project {
 
     private Date date;
 
+    private int counter = 0;
+
     public Project(String title, String mode) {
         this.title = title;
         this.status = false;
         this.mode = mode;
+
     }
 
     public Project() {

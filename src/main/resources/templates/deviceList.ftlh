@@ -2,7 +2,7 @@
 
 <@c.page>
 <div class="container mt-2">
-    <h5>List of Devices</h5>
+    <h6>List of Devices</h6>
 </div>
 
 <table class="table">
@@ -28,9 +28,9 @@
                                 </tr>
                                 </thead>
                             <tbody>
-                                <#list device.projects as projects_key, project>
+                                <#list device.projects as project>
                                     <tr>
-                                        <td>${projects_key}</td>
+                                        <td></td>
                                         <td>${project.title} </td>
                                         <td>${project.comments?ifExists}</td>
                                     </tr>

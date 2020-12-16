@@ -56,8 +56,8 @@
                         <a href="/device/${dev.id}">edit</a>
                     </div>
                             <ul class="list-group list-group-flush">
-                                <#list dev.projects as projects_key, project>
-                                <li class="list-group-item" >${projects_key}: ${project.title}: ${project.comments?ifExists}
+                                <#list dev.projects as project>
+                                <li class="list-group-item" >${project.counter}: ${project.title}: ${project.comments?ifExists}
 
                                 </li>
 
