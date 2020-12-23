@@ -34,6 +34,7 @@
                 <div>
                 <input type="text" class="form-control mt-1" name="titleProject3" placeholder="Наименование операции: ">
                 <input type="text" class="form-control mt-1" name="modeProject3" placeholder="Режим: ">
+                    <button class="favorite styled" type="button">Tectung</button>
 
                     <input type="hidden" name="_csrf" value="${_csrf.token}" />
                     <button type="submit" class="btn btn-primary mt-2">Добавить</button>
@@ -54,6 +55,7 @@
                     <div class="card-header">
                         <span>${dev.nameDevice}  ${dev.nameAuthor}</span>
                         <a href="/device/${dev.id}">edit</a>
+                        <a href="/report/${dev.id}">Report</a>
                     </div>
                             <ul class="list-group list-group-flush">
                                 <#list dev.projects as project>

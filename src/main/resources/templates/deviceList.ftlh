@@ -16,7 +16,7 @@
     <tbody>
     <#list device as  device>
     <tr>
-            <td>${device.nameDevice}  <a href="/device/${device.id}">edit</a></td>
+            <td>${device.nameDevice}  <a href="/device/${device.id}">edit</a> <a href="/report/${device.id}">Report</a></td>
 
                     <td>
                         <table class="table">

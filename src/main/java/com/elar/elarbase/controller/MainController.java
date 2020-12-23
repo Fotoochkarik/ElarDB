@@ -8,9 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -52,7 +50,8 @@ public class MainController {
             @RequestParam String modeProject1,
             @RequestParam String  modeProject2,
             @RequestParam String  modeProject3,
-                    Map<String, Object> model){
+            Map<String, Object> model
+    ){
         Project project1 = new Project(titleProject1, modeProject1);
         Project project2 =new Project(titleProject2, modeProject2);
         Project project3 =new Project(titleProject3, modeProject3);
@@ -68,8 +67,58 @@ public class MainController {
         Iterable<Device> devices =  deviceRepo.findAll();
 //        model.put("device", devices);
 
-        return "redirect:/";
+        return "redirect:/add";
     }
+//    @PostMapping("/add")
+//    public String addForm(
+//            @AuthenticationPrincipal User author,
+//            @RequestParam String nameD,
+//            @RequestParam String  titleProject,
+//            @RequestParam String modeProject,
+//            Map<String, Object> model){
+//
+//        Device device = new Device();
+//        List<Project> projects = new ArrayList<>();
+//        projects.add( new Project(titleProject, modeProject));
+//        device.setNameDevice(nameD);
+//        device.setAuthor(author);
+////        device.setProjects(projects);
+//
+//        deviceRepo.save(device);
+//
+//        return "add-project";
+//    }
+//    @GetMapping("/add")
+//    @RequestMapping(value = "/add", method = RequestMethod.GET)
+//    public String deviceList(Model model){
+//
+//        return "add-form";
+//    }
+
+//    @GetMapping("{device}")
+//    public String deviceEditForm(Device device, Model model ){
+//        model.addAttribute("device", device);
+//        return "add-project";
+//    }
+@PostMapping("/add")
+public String addForm(@RequestParam("deviceId") Device device,
+                      @RequestParam String  titleProject,
+                      @RequestParam String modeProject
+){
+    Integer id = device.getId();
+    List<Project> projects = device.getProjects();
+    projects.add( new Project(titleProject, modeProject));
+    device.setProjects(projects);
+    deviceRepo.save(device);
+    return "redirect:/add/" + id;
+}
+
+//    @GetMapping("{device}")
+//    public String deviceEditForm(Device device, Model model){
+//        model.addAttribute("device", device);
+//        return "addProject";
+//
+//    }
 
 }
 
