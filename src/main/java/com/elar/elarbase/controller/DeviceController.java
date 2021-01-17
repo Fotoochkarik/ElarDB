@@ -19,33 +19,22 @@ public class DeviceController {
 
 
     @GetMapping
-//    @RequestMapping(value = "/device", method = RequestMethod.GET)
     public String deviceList(Model model){
         model.addAttribute("device", deviceRepo.findAll());
-        return "deviceList";
+        return "/";
     }
 
-//    @GetMapping("{device}")
-    @RequestMapping(value = "{device}", method = RequestMethod.GET)
+    @GetMapping("{device}")
     public String deviceEditForm(Device device, Model model ){
         model.addAttribute("device", device);
         model.addAttribute("projects", device.getProjects());
         return "deviceEdit";
     }
 
-//    @PostMapping
-    @RequestMapping(value = "/device", method = RequestMethod.POST)
+    @PostMapping
     public String deviceCommentsSave(
-//            @RequestParam String comments0,
-//            @RequestParam String comments1,
-//            @RequestParam String comments2,
             @RequestParam String comments,
-//            @RequestParam String comment,
-            @RequestParam("deviceId") Device device
-    ){
-
-//        Map<Long, Project> projects = device.getProjects();
-
+            @RequestParam("deviceId") Device device){
         List<Project> projectsList =device.getProjects();
 
         for (Project project : projectsList) {
@@ -55,64 +44,6 @@ public class DeviceController {
                 break;
             }
         }
-
-
-//        for (Long i = 1L; i < projects.size()+1; i++) {
-//            Project project = projects.get(i);
-//            if(!project.isStatus()){
-//                projects.get(i).setComments(comments);
-//                projects.get(i).isDone();
-//                break;
-//            }
-//        }
-
-
-//        projects.get(0).setComments(comments0);
-//        projects.get(1).setComments(comments1);
-//        projects.get(2).setComments(comments2);
-//        projects.get(2).getTitle()
-
-
-
-
-//        String cm = "comments";
-//        for (int i = 0; i <projects.size() ; i++) {
-//            String st =  cm + i;
-//            projects.get(i).setComments(st);
-//
-//        }
-
-//        String cm = "comments";
-//        for (int i = 0; i <3; i++) {
-//            String st = cm + i;
-//
-//            System.out.println(st);
-//
-//        }
-
-//
-//        if (comments0 != null && !comments0.isEmpty()) {
-//            projects.get(1L).setComments(comments0);
-//            projects.get(1L).isDone();
-//        }
-//
-//        if (comments1 != null && !comments1.isEmpty()) {
-//            projects.get(2L).setComments(comments1);
-//            projects.get(2L).isDone();
-//        }
-//
-//        if (comments2 != null && !comments2.isEmpty()) {
-//            projects.get(3L).setComments(comments2);
-//            projects.get(3L).isDone();
-//        }
-
-
-//        for (Project project : projects) {
-//            if(comments != null && !comments.isEmpty())
-//            project.setComments(comments);
-////            project.isDone();
-//        }
-
         deviceRepo.save(device);
         return "redirect:/device";
     }

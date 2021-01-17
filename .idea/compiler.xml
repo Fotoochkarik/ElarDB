@@ -7,11 +7,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="ElarDB" />
+        <module name="EDB" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="ElarDB" target="8" />
+      <module name="EDB" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>

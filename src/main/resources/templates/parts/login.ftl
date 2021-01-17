@@ -10,6 +10,12 @@
         <label for="password">Password: </label>
         <input type="password" class="form-control" id="password" name="password" aria-describedby="UsernameHelp" placeholder="Enter your password">
     </div>
+    <#if isRegisterForm>
+    <div>
+        <label for="surname">Surname: </label>
+        <input type="text" class="form-control" id="surname" name="surname" aria-describedby="UsernameHelp" placeholder="Enter your surname">
+    </div>
+    </#if>
 
     <input type="hidden" name="_csrf" value="${_csrf.token}" />
 

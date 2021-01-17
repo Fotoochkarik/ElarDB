@@ -23,19 +23,7 @@
         <form method="post" class="form-inline">
 
                 <input type="text" class="form-control mt-1" name="nameDevice" placeholder="Название партии: ">
-                <div class="mt-3">
-                <input type="text" class="form-control mt-1" name="titleProject1" placeholder="Наименование операции: ">
-                <input type="text" class="form-control mt-1" name="modeProject1" placeholder="Режим: ">
-                </div>
                 <div>
-                <input type="text" class="form-control mt-1" name="titleProject2" placeholder="Наименование операции: ">
-                <input type="text" class="form-control mt-1" name="modeProject2" placeholder="Режим: ">
-                </div>
-                <div>
-                <input type="text" class="form-control mt-1" name="titleProject3" placeholder="Наименование операции: ">
-                <input type="text" class="form-control mt-1" name="modeProject3" placeholder="Режим: ">
-                    <button class="favorite styled" type="button">Tectung</button>
-
                     <input type="hidden" name="_csrf" value="${_csrf.token}" />
                     <button type="submit" class="btn btn-primary mt-2">Добавить</button>
                 </div>
@@ -53,16 +41,15 @@
         <div class="card my-3">
 
                     <div class="card-header">
-                        <span>${dev.nameDevice}  ${dev.nameAuthor}</span>
-                        <a href="/device/${dev.id}">edit</a>
-                        <a href="/report/${dev.id}">Report</a>
+                        <ul>Партия: ${dev.nameDevice}</ul>
+                           <ul> Ответственный: ${dev.nameAuthor}
+                        </ul>
+                        <ul><a href="/device/${dev.id}">Добавить примечание о праделанной операции</a></ul>
+                        <a href="/report/${dev.id}">Сопроводительный лист комплекта</a>
                     </div>
                             <ul class="list-group list-group-flush">
                                 <#list dev.projects as project>
-                                <li class="list-group-item" >${project.counter}: ${project.title}: ${project.comments?ifExists}
-
-                                </li>
-
+                                <li class="list-group-item" >${project.counter}: ${project.title}: ${project.comments?ifExists}</li>
                                 </#list>
                             </ul>
 

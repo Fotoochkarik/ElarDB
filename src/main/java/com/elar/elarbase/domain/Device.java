@@ -22,7 +22,6 @@ public class Device {
 
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "project_id" )
-//    private Map<Long, Project> projects;
     private List< Project> projects;
 
     public String getNameAuthor(){
@@ -37,16 +36,6 @@ public class Device {
         this.projects = projects;
     }
 
-
-
-    //    @OneToOne (cascade = CascadeType.ALL)
-//    @JoinColumn(name = "device_id")
-//    private SummaryDevices summary;
-
-    //OneToMany Example
-
-
-
     @Override
     public String toString() {
         return "Device{" +
@@ -56,11 +45,35 @@ public class Device {
                 '}';
     }
 
-//    @OneToMany(mappedBy = "project")
-//    private Collection<Project> project;
+    public List<Project> getProjects() {
+        return projects;
+    }
 
-//    @Column (name =  "project")
-//    private Project project;
+    public Integer getId() {
+        return id;
+    }
 
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
+    public String getNameDevice() {
+        return nameDevice;
+    }
+
+    public void setNameDevice(String nameDevice) {
+        this.nameDevice = nameDevice;
+    }
+
+    public User getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(User author) {
+        this.author = author;
+    }
+
+    public void setProjects(List<Project> projects) {
+        this.projects = projects;
+    }
 }
