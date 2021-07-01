@@ -16,7 +16,7 @@ cache:
 branches:
   only:
     - master
-    - devlopers
+    - newBranch
 
 # https://stackoverflow.com/a/49852690/548473:
 services:
