@@ -1,7 +1,7 @@
 .idea
 out
 target
-txt
 *.iml
 log
 *.patch
+/txt/

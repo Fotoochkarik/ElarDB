@@ -1,9 +1,7 @@
 package com.elar.elarbase.controller;
 
 import com.elar.elarbase.domain.Device;
-import com.elar.elarbase.domain.Project;
 import com.elar.elarbase.domain.User;
-import com.elar.elarbase.repos.DeviceRepo;
 import com.elar.elarbase.service.DeviceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -14,14 +12,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.List;
-
 @Controller
 @RequestMapping("/device")
 public class DeviceController {
 
-    @Autowired
-    private DeviceRepo deviceRepo;
     @Autowired
     private DeviceService deviceService;
 
@@ -40,25 +34,18 @@ public class DeviceController {
     }
 
     @GetMapping("{device}")
-    public String addComents(Device device, Model model) {
+    public String addComent(Device device, Model model) {
         model.addAttribute("device", device);
         model.addAttribute("projects", device.getProjects());
         return "deviceEdit";
     }
 
     @PostMapping("/comment")
-    public String saveComments(
+    public String saveComment(
             @RequestParam String comments,
-            @RequestParam("deviceId") Device device) {
-        List<Project> projectsList = device.getProjects();
-        for (Project project : projectsList) {
-            if (!project.isStatus()) {
-                project.setComments(comments);
-                project.isDone();
-                break;
-            }
-        }
-        deviceRepo.save(device);
+            @RequestParam("deviceId") Device device
+    ) {
+        deviceService.saveComment(device, comments);
         return "redirect:/main";
     }
 

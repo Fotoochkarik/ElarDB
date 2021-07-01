@@ -13,7 +13,7 @@ import java.util.List;
 public class DeviceService {
 
     @Autowired
-    DeviceRepo deviceRepo;
+    private DeviceRepo deviceRepo;
 
     public Iterable<Device> findAll() {
         return deviceRepo.findAll();
@@ -45,5 +45,17 @@ public class DeviceService {
         device.setProjects(projects);
         deviceRepo.save(device);
 
+    }
+
+    public void saveComment(Device device, String comments) {
+        List<Project> projectsList = device.getProjects();
+        for (Project project : projectsList) {
+            if (!project.isStatus()) {
+                project.setComments(comments);
+                project.isDone();
+                break;
+            }
+        }
+        deviceRepo.save(device);
     }
 }

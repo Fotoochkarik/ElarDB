@@ -17,7 +17,7 @@ import java.util.stream.Collectors;
 public class ReportController {
 
     @Autowired
-    DeviceRepo deviceRepo;
+    private DeviceRepo deviceRepo;
 
     @GetMapping
     public String reportDevice(Model model) {
