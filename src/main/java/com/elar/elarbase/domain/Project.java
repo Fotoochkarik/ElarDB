@@ -17,7 +17,7 @@ public class Project {
     @Column(name = "title")
     private String title;
 
-    @Column (name = "status")
+    @Column(name = "status")
     private boolean status;
 
     private String mode;
@@ -25,11 +25,14 @@ public class Project {
     @Column(name = "comments")
     private String comments;
 
-    private  Integer quantity;
+    private Integer quantity;
 
     private Date date;
 
     private int counter = 0;
+
+    public Project() {
+    }
 
     public Project(String title, String mode) {
         this.title = title;
@@ -38,11 +41,7 @@ public class Project {
 
     }
 
-    public Project() {
-    }
-
-
-    public boolean isDone(){
+    public boolean isDone() {
         this.date = new Date();
         return this.status = true;
     }
@@ -110,29 +109,4 @@ public class Project {
     public void setCounter(int counter) {
         this.counter = counter;
     }
-//    @ManyToMany(mappedBy = "projects")
-//    private Set<Employee> employees;
-
-    //OneToMany Example
-
-
-//    private EmployeeEntity employee;
-//    @ManyToOne
-//    @JoinColumn(name = "employee_id", referencedColumnName = "id")
-//    public EmployeeEntity getEmployee() {
-//        return this.employee;
-//    }
-
-
-
-
-//    public Set<Employee> getEmployees() {
-//        return employees;
-//    }
-//
-//    public void setEmployees(Set<Employee> employees) {
-//        this.employees = employees;
-//    }
-
-
 }

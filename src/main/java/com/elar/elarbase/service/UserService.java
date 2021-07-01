@@ -18,13 +18,11 @@ import java.util.stream.Collectors;
 @Service
 public class UserService implements UserDetailsService {
     @Autowired
-    private  UserRepo userRepo;
+    private UserRepo userRepo;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-//        return userRepo.findByLogin(username);
         return userRepo.findByUsername(username);
-
     }
 
     public List<User> findAll() {
@@ -34,25 +32,21 @@ public class UserService implements UserDetailsService {
     public void saveUser(User user, String surname, String username, Map<String, String> form) {
         user.setUsername(username);
         user.setSurname(surname);
-
         Set<Object> roles = Arrays.stream(Role.values())
                 .map(Role::name)
                 .collect(Collectors.toSet());
-
         user.getRoles().clear();
         for (String key : form.keySet()) {
-            if (roles.contains(key)){
+            if (roles.contains(key)) {
                 user.getRoles().add(Role.valueOf(key));
             }
         }
         userRepo.save(user);
     }
 
-
     public void updateProfile(User user, String password, String surname) {
         user.setSurname(surname);
         user.setPassword(password);
-
         userRepo.save(user);
     }
 }

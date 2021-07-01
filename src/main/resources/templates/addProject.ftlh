@@ -27,13 +27,12 @@
     </tbody>
 </table>
 
-<form method="post" class="form-inline" action="/add">
+<form method="post" class="form-inline" action="/device/add">
     <div>
         Введите наименование операции:
         <input type="text" class="form-control mt-1" name="titleProject" placeholder="Наименование операции: ">
         Введите режим операции:
         <input type="text" class="form-control mt-1" name="modeProject" placeholder="Режим: ">
-
 
         <input type="hidden" value="${device.id}" name="deviceId">
         <input type="hidden" name="_csrf" value="${_csrf.token}" />
@@ -44,7 +43,7 @@
 </form>
 
 <body>
-<button onclick="window.location.href = '/device/';">Click Here</button>
+<button onclick="window.location.href = '/main/';">Click Here</button>
 </body>
 
 </@c.page>

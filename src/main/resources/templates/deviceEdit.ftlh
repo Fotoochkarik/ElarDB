@@ -6,7 +6,7 @@
 
 
 
-<form action="/device" method="post">
+<form action="/device/comment" method="post">
     <table border="2">
         <thead>
         <tr>
@@ -21,7 +21,7 @@
             <td>${projects[0].counter}</td>
             <td>${projects[0].title}</td>
             <td>${projects[0].mode}</td>
-            <td><input type="text" name="comments" placeholder="Добавте примечание о праделанной операции"/></td>
+            <td><input type="text" name="comments" placeholder="Добавь примечание о проделанной операции"/></td>
         </tr>
 
         </tbody>

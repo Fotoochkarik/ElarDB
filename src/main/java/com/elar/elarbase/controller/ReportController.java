@@ -20,12 +20,13 @@ public class ReportController {
     DeviceRepo deviceRepo;
 
     @GetMapping
-    public String reportDevice(Model model){
-        model.addAttribute("device",deviceRepo.findAll());
+    public String reportDevice(Model model) {
+        model.addAttribute("device", deviceRepo.findAll());
         return "reportList";
     }
+
     @GetMapping("{device}")
-    public String deviceEditForm(Device device, Model model ){
+    public String editForm(Device device, Model model) {
         model.addAttribute("device", device);
         model.addAttribute("projects", device.getProjects().stream()
                 .sorted(Comparator.comparing(Project::getCounter))

@@ -4,7 +4,6 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.util.List;
-import java.util.Map;
 
 @Entity
 @Data
@@ -15,18 +14,19 @@ public class Device {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column (name = "name_device")
+    @Column(name = "name_device")
     private String nameDevice;
 
     private User author;
 
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "project_id" )
-    private List< Project> projects;
+    @JoinColumn(name = "project_id")
+    private List<Project> projects;
 
-    public String getNameAuthor(){
+    public String getNameAuthor() {
         return author != null ? author.getUsername() : "<none>";
     }
+
     public Device() {
     }
 
@@ -34,15 +34,6 @@ public class Device {
         this.nameDevice = nameDevice;
         this.author = author;
         this.projects = projects;
-    }
-
-    @Override
-    public String toString() {
-        return "Device{" +
-                "id=" + id +
-                ", nameDevice='" + nameDevice + '\'' +
-                ", author=" + author +
-                '}';
     }
 
     public List<Project> getProjects() {
@@ -75,5 +66,14 @@ public class Device {
 
     public void setProjects(List<Project> projects) {
         this.projects = projects;
+    }
+
+    @Override
+    public String toString() {
+        return "Device{" +
+                "id=" + id +
+                ", nameDevice='" + nameDevice + '\'' +
+                ", author=" + author +
+                '}';
     }
 }

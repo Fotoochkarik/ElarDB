@@ -18,12 +18,12 @@ public class RegistrationController {
     private UserRepo userRepo;
 
     @GetMapping("/registration")
-    public String registration(){
+    public String registration() {
         return "registration";
     }
 
-    @PostMapping ("/registration")
-    public String addUser(User user, Map <String, Object> model){
+    @PostMapping("/registration")
+    public String addUser(User user, Map<String, Object> model) {
 //        User userFromDb = userRepo.findByLogin(user.getUsername());
 //        if (userFromDb != null) {
 //            model.put("message", "User exist!" );
